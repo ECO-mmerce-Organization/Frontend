@@ -1,0 +1,30 @@
+.img-bg {
+    background-image: url('https://i.imgur.com/4dBMMCi.jpg');
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(41, 41, 41, 0.192);
+
+}
+
+.background-page {
+    background-color: rgb(221, 221, 129);
+}
+
+
+.texture{
+    background-image: url('https://i.imgur.com/UZTMHpX.png%27');
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-cadastro{
+    background-color: rgb(255, 255, 255);
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(167, 167, 167, 0.192);
+}

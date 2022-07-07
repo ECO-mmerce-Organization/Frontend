@@ -21,10 +21,3 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.form-cadastro{
-    background-color: rgb(255, 255, 255);
-    padding: 50px 20px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px 5px rgba(167, 167, 167, 0.192);
-}

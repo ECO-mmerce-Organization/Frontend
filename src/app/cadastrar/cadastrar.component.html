@@ -3,7 +3,7 @@
         <div class="col-md-6" id="img-bg"></div>
         <div class="col-md-6 my-5 ">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-8 form-cadastro">
 
                     <h1 class="text-center">Cadastro</h1>
 
@@ -32,9 +32,9 @@
                         <label for="usuario">Link da Foto</label>
                     </div>
 
-                    <div class="form-check form-check-inline mb-2 radio-style">
-                        <input class="ml-1" type="radio" name="webmaster" value="user" (change)="tipoUser($event)" />Usuário
-                        <input class="ml-3" type="radio" name="webmaster" value= true (change)="tipoUser($event)" />Administrador
+                    <div class="mb-2">
+                        <input class="m-lg-2" type="radio" name="webmaster" value=false (change)="tipoUser($event)" />Usuário
+                        <input class="m-lg-2" type="radio" name="webmaster" value=true (change)="tipoUser($event)" />Administrador
                     </div>
 
                     <div class="d-flex justify-content-end">

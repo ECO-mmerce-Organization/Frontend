@@ -10,7 +10,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuarioLogin: UsuarioLogin = new  UsuarioLogin
+  usuarioLogin: UsuarioLogin = new UsuarioLogin
 
   constructor
     (private auth: AuthService,
@@ -21,9 +21,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
   }
+  
   logar() {
-    this.auth.entrar(this.usuarioLogin).subscribe((resp:UsuarioLogin) => {
-      this.usuarioLogin = resp 
+    this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+      this.usuarioLogin = resp
       environment.token = this.usuarioLogin.token
       environment.nome = this.usuarioLogin.nome
       environment.foto = this.usuarioLogin.foto
@@ -36,13 +37,13 @@ export class LoginComponent implements OnInit {
       console.log(environment.id)
       console.log(environment.ong)
 
+      this.router.navigate(['/home'])
 
-
+    }, erro => {
+      if (erro.status == 401) {
+        alert('Usuário ou senha incorretos!')
+      }
     })
-    
-
-
-    
   }
 
 

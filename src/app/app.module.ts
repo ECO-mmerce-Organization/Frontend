@@ -11,6 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { OngsComponent } from './ongs/ongs.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 
 @NgModule({
@@ -28,9 +34,16 @@ import { SobreComponent } from './sobre/sobre.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

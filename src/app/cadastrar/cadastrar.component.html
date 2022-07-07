@@ -8,52 +8,38 @@
                     <h1 class="text-center">Cadastro</h1>
 
                     <div class="input-style-l mb-4">
-                        <input type="text" name="nome" required="required">
+                        <input [(ngModel)]="usuario.nome" type="text" name="nome" required="required">
                         <label for="nome">Nome</label>
                     </div>
 
                     <div class="input-style-l mb-4">
-                        <input type="text" name="usuario" required="required">
+                        <input [(ngModel)]="usuario.usuario" type="text" name="usuario" required="required">
                         <label for="usuario">Usuário</label>
                     </div>
 
                     <div class="input-style-l mb-4">
-                        <input type="password" name="senha" required="required">
+                        <input (input)="confirmarSenha($event)" type="password" name="senha" required="required">
                         <label for="senha">Senha</label>
                     </div>
 
                     <div class="input-style-l mb-4">
-                        <input type="password" name="ConfirmaSenha" required="required">
+                        <input [(ngModel)]="usuario.senha" type="password" name="ConfirmaSenha" required="required">
                         <label for="ConfirmaSenha">Confirmar Senha</label>
                     </div>
 
                     <div class="input-style-l mb-4">
-                        <input type="text" name="foto" required="required">
+                        <input [(ngModel)]="usuario.foto" type="text" name="foto" required="required">
                         <label for="usuario">Link da Foto</label>
                     </div>
 
-                    <div class="mb-3">
-                        <input id="user" type="radio" name="webmaster" value="user" checked/> Usuário
-                        <input id="user" type="radio" name="webmaster" value="adm" /> Administrador
-                    </div>
-
-                    <div class="input-style-l mb-4">
-                        <input type="text" name="foto" required="required">
-                        <label for="usuario">Tipo de usuário</label>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="TipoUsuario">Tipo de usuário</label>
-                        <select class="form-control" name="tipo" id="tipo" placeholder="sasa">
-                            <option disabled selected>Selecione o tipo de usuário:</option>
-                            <option value="normal">Usuário</option>
-                            <option value="adm">Administrador</option>
-                        </select>
+                    <div class="form-check form-check-inline mb-2 radio-style">
+                        <input class="ml-1" type="radio" name="webmaster" value="user" (change)="tipoUser($event)" />Usuário
+                        <input class="ml-3" type="radio" name="webmaster" value= true (change)="tipoUser($event)" />Administrador
                     </div>
 
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-danger mr-4" routerLink="/login">Cancelar</button>
-                        <button type="submit" class="btn btn-dark">Cadastrar</button>
+                        <button type="submit" class="btn btn-dark" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
                     <hr class="my-4">

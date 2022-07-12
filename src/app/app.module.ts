@@ -14,6 +14,9 @@ import { SobreComponent } from './sobre/sobre.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
+import { FundadoresComponent } from './fundadores/fundadores.component';
 
 
 
@@ -30,6 +33,9 @@ import { FormsModule } from '@angular/forms';
     ProdutosComponent,
     OngsComponent,
     SobreComponent,
+    CadastrarProdutoComponent,
+    AtualizarProdutoComponent,
+    FundadoresComponent,
     
   ],
   imports: [

@@ -9,7 +9,6 @@
 
     <div class="row">
         <div class="col-md-3 form-cadastro py-4 titulo-filtro">
-            <!-- <h3 class="text-center mb-3">FILTRAR</h3> -->
             <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR NOME</h4>
             <hr class="linhas-titulo mb-4 mt-0">
             
@@ -35,7 +34,8 @@
                 </div>
             </form>
 
-            <button class="btn-sm btn-dark">Enviar</button>
+            <button class="btn-sm btn-dark" (click)="getAllProdutos()">Enviar Prod</button>
+            <button class="btn-sm btn-dark" (click)="getAllCategorias()">Enviar Cat</button>
 
             <div class="d-flex align-content-end align-items-end">
 

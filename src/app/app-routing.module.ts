@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
+import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FundadoresComponent } from './fundadores/fundadores.component';
@@ -14,15 +15,14 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-<<<<<<< HEAD
-  {path: 'produtos', component: ProdutosComponent}
-=======
+  {path: 'produtos', component: ProdutosComponent},
 
   {path: 'cadastrarProduto', component: CadastrarProdutoComponent},
   {path: 'atualizarProduto', component: AtualizarProdutoComponent},
+  
+  {path: 'cadastrarCategoria', component: CadastrarCategoriaComponent},
 
   {path: 'fundadores', component: FundadoresComponent}
->>>>>>> 62a6694d23a6e8373efa23c77359e3f067a5cef5
 ];
 
 

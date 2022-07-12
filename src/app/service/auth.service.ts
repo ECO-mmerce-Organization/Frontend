@@ -10,15 +10,17 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
+  linkAuth = 'http://localhost:8080/usuarios'
+
   constructor(
     private http: HttpClient
   ) { }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://ecommercegrupo6.herokuapp.com/usuarios/cadastrar', usuario)
+    return this.http.post<Usuario>(this.linkAuth + "/cadastrar", usuario)
   }
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin>('https://ecommercegrupo6.herokuapp.com/usuarios/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>(this.linkAuth + "/logar", usuarioLogin)
 
   }
 

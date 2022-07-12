@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Produto } from '../model/produto';
+import { Produto } from '../model/Produto';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +27,7 @@ export class ProdutoService {
     return this.http.get<Produto>(this.linkProduto + `/${id}`)
   }
 
+  postProdutos(produto: Produto): Observable<Produto>{
+    return this.http.post<Produto>(this.linkProduto, produto, this.token)
+  }
 }

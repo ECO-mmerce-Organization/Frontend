@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
-import { Produto } from '../model/produto';
+import { Produto } from '../model/Produto';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -16,7 +16,11 @@ export class ProdutosComponent implements OnInit {
   listaCategorias: Categoria[]
   listaProdutos: Produto[]
 
+  produto: Produto = new Produto
+  categoria: Categoria= new Categoria
+
   idProduto: number
+  idCategoria: number
 
   constructor(
     private categoriaService: CategoriaService,
@@ -29,15 +33,18 @@ export class ProdutosComponent implements OnInit {
       // alert('Sua sessão expirou!')
       this.router.navigate(['/login'])
     }
+
+    this.getAllProdutos()
+
   }
 
   // CATEGORIAS
   getAllCategorias() {
     this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
-      // console.log(this.listaCategorias)
+      console.log(this.listaCategorias)
     })
-  }
+  } 
 
   // PRODUTOS
   getAllProdutos() {
@@ -49,6 +56,12 @@ export class ProdutosComponent implements OnInit {
 
   findProdutosById(){
     this.produtoService.getProdutosById(this.idProduto)
+  }
+
+  postProduto(){
+    this.produtoService.postProdutos(this.produto).subscribe((resp: Produto)=>{
+      this.produto = resp
+    })
   }
 
 }

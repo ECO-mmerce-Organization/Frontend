@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { FundadoresComponent } from './fundadores/fundadores.component';
+import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
 
 
 
@@ -36,6 +37,7 @@ import { FundadoresComponent } from './fundadores/fundadores.component';
     CadastrarProdutoComponent,
     AtualizarProdutoComponent,
     FundadoresComponent,
+    CadastrarCategoriaComponent,
     
   ],
   imports: [

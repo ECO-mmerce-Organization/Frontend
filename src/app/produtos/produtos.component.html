@@ -11,12 +11,13 @@
         <div class="col-md-3 form-cadastro py-4 titulo-filtro">
             <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR NOME</h4>
             <hr class="linhas-titulo mb-4 mt-0">
-            
+
             <div class="input-group input-group-sm mb-3">
                 <input type="text" class="form-control" placeholder="Pesquisar Produtos..."
                     aria-label="pesquisaProdutos" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary text-sm-center" type="button" id="button-addon2">Pesquisar</button>
+                    <button class="btn btn-outline-secondary text-sm-center" type="button"
+                        id="button-addon2">Pesquisar</button>
                 </div>
             </div>
 
@@ -101,80 +102,26 @@
                 <div class="px-lg-0">
                     <div class="row">
                         <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg" alt=""
-                                    class="img-fluid card-img-top">
+                        <div *ngFor="let produto of listaProdutos" class="col-xl-3 col-lg-4 col-md-6 mb-2">
+
+                            <div class="bg-white rounded shadow-sm">
+
+                                <img src="{{produto.foto}}" alt="" class="img-fluid" height="250px" width="250px">
+
                                 <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
-                                    <div
-                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
-                                        </div>
+                                    <h5> <a href="#" class="text-dark">{{produto.nomeProd}}</a></h5>
+                                    <p class="small text-muted mb-0">{{produto.descricao}}</p>
+
+                                    <div class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar</div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- End -->
 
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt=""
-                                    class="img-fluid card-img-top">
-                                <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
-                                    <div
-                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-3.jpg" alt=""
-                                    class="img-fluid card-img-top">
-                                <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
-                                    <div
-                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
-
-                        <!-- Gallery item -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
-                            <div class="bg-white rounded shadow-sm"><img
-                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt=""
-                                    class="img-fluid card-img-top">
-                                <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
-                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
-                                    <div
-                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End -->
                     </div>
 
                 </div>

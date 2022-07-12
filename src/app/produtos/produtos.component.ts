@@ -12,4 +12,11 @@ export class ProdutosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menus = [1, 2, 3]
+
+  menuItems: string[] = ["testando", "Teste"]
+
+
+
+
 }

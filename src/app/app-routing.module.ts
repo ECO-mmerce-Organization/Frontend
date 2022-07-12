@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'produtos', component: ProdutosComponent}
 ];
 
 

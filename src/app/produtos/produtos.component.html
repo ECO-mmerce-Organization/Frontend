@@ -1,1 +1,181 @@
-<p>produtos works!</p>
+<div class="row d-flex justify-content-center align-items-center bg-dark titulo-pg">
+    <div class="col-md-12">
+        <h1 class="text-center text-white m-2">PRODUTOS</h1>
+        <h5 class="text-center text-white mt-0">Todos os produtos</h5>
+    </div>
+</div>
+
+<div class="container my-4">
+
+    <div class="row">
+        <div class="col-md-3 form-cadastro py-4 titulo-filtro">
+            <!-- <h3 class="text-center mb-3">FILTRAR</h3> -->
+            <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR NOME</h4>
+            <hr class="linhas-titulo mb-4 mt-0">
+            
+            <div class="input-group input-group-sm mb-3">
+                <input type="text" class="form-control" placeholder="Pesquisar Produtos..."
+                    aria-label="pesquisaProdutos" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary text-sm-center" type="button" id="button-addon2">Pesquisar</button>
+                </div>
+            </div>
+
+
+            <!-- HEAD -->
+            <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR VALOR</h4>
+
+            <hr class="linhas-titulo mb-1 mt-0">
+
+            <form>
+                <div class="form-group">
+                    <input type="range" class="form-control-range" id="formControlRange">
+                    <label class="d-flex justify-content-end text-range" for="rangeInput">preço R$ VarMin - R$
+                        max</label>
+                </div>
+            </form>
+
+            <button class="btn-sm btn-dark">Enviar</button>
+
+            <div class="d-flex align-content-end align-items-end">
+
+            </div>
+            <!-- END -->
+
+
+            <!-- CHECK-BOXES -->
+            <div id="checkboxes2" class=" align-content-center">
+                <!-- HEAD -->
+                <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR CATEGORIA</h4>
+
+                <hr class="linhas-titulo mb-1 mt-0">
+                <!-- END -->
+
+                <!-- CONTENT -->
+                <div>
+                    <label for="cat1" class="select_label d-block mb-0">
+                        <input type="checkbox" value="cat1" name="cat1" id="cat1" class="m-lg-2" />Categoria 1
+                        <span class="select_label-icon"></span>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="cat2" class="select_label d-block">
+                        <input type="checkbox" value="cat2" name="cat2" id="cat2" class="m-lg-2" />Categoria 2
+                        <span class="select_label-icon"></span>
+                    </label>
+                </div>
+                <!-- END -->
+            </div>
+
+            <!-- CHECK-BOXES -->
+            <div id="checkboxes2" class="">
+                <!-- HEAD -->
+                <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR ONG</h4>
+
+                <hr class="linhas-titulo mb-1 mt-0">
+                <!-- END -->
+
+                <!-- CONTENT -->
+                <div>
+                    <label for="ong1" class="select_label d-block mb-0">
+                        <input type="checkbox" value="ong1" name="ong1" id="ong1" class="m-lg-2" />ONG 1
+                        <span class="select_label-icon"></span>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="ong2" class="select_label d-block">
+                        <input type="checkbox" value="ong2" name="ong2" id="ong2" class="m-lg-2" />ONG 2
+                        <span class="select_label-icon"></span>
+                    </label>
+                </div>
+                <!-- END -->
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="container-fluid my-3">
+                <div class="px-lg-0">
+                    <div class="row">
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg" alt=""
+                                    class="img-fluid card-img-top">
+                                <div class="p-2">
+                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
+                                    <div
+                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt=""
+                                    class="img-fluid card-img-top">
+                                <div class="p-2">
+                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
+                                    <div
+                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-3.jpg" alt=""
+                                    class="img-fluid card-img-top">
+                                <div class="p-2">
+                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
+                                    <div
+                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Gallery item -->
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+                            <div class="bg-white rounded shadow-sm"><img
+                                    src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg" alt=""
+                                    class="img-fluid card-img-top">
+                                <div class="p-2">
+                                    <h5> <a href="#" class="text-dark">Red paint cup</a></h5>
+                                    <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elitasdadsasd asdadsasd asdadasda asdadsada asdadasd </p>
+                                    <div
+                                        class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->
+                    </div>
+
+                </div>
+            </div>

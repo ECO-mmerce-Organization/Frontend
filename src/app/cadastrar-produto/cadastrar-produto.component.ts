@@ -68,6 +68,7 @@ export class CadastrarProdutoComponent implements OnInit {
       this.produto = resp
       alert('Produto cadastrado com sucesso!')
       this.produto = new Produto()
+      this.router.navigate(['/produto'])
     })
 
   }

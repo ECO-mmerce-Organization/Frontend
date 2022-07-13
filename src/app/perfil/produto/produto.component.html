@@ -113,7 +113,8 @@
 
                                     <div class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
 
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar</div>
+                                        <button [routerLink]="['/deletarProduto',produto.id]">Apagar</button>
+                                        <button [routerLink]="['/atualizarProduto',produto.id]">Editar</button>
 
                                     </div>
                                 </div>

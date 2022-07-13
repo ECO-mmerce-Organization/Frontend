@@ -7,6 +7,31 @@
 </div>
 
 <div class="container">
+    <div class="px-lg-0">
+        <div class="row d-flex justify-content-center">
+            <!-- Gallery item -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+
+                <div class="bg-white rounded shadow-sm">
+
+                    <img src="{{produto.foto}}" alt="" class="img-fluid" height="250px" width="250px">
+
+                    <div class="p-2">
+                        <h5> <a href="#" class="text-dark">{{produto.nomeProd}}</a></h5>
+                        <p class="small text-muted mb-0">{{produto.descricao}}</p>
+
+                        <div class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End -->
+
+        </div>
+
     <div class="row">
         <div class="col-md-12">
             <h4 class="text-center cor">Você tem certeza que deseja apagar esse produto?</h4>
@@ -14,12 +39,10 @@
     </div>
 
 
-
-
     <div class="row mt-5 mb-5">
         <div class="col-md-12 d-flex justify-content-center">
-            <button type="submit" class="btn bgcor1 mr-4 " >Não</button>
-            <button type="submit" class="btn bgcor" >Sim</button>
+            <button [routerLink]="['/produto']" type="submit" class="btn bgcor1 mr-4 " >Não</button>
+            <button (click)="apagar()" type="submit" class="btn bgcor" >Sim</button>
         </div>
     </div>
 

@@ -9,7 +9,7 @@ import { Produto } from '../model/Produto';
 })
 export class ProdutoService {
 
-  linkProduto = 'http://localhost:8080/produtos'
+  linkProduto = 'https://ecommercegrupo6.herokuapp.com/produtos'
 
   constructor(
     private http: HttpClient

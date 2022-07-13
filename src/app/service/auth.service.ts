@@ -10,7 +10,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
-  linkAuth = 'http://localhost:8080/usuarios'
+  linkAuth = 'https://ecommercegrupo6.herokuapp.com/usuarios'
 
   constructor(
     private http: HttpClient

@@ -18,6 +18,9 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { FundadoresComponent } from './fundadores/fundadores.component';
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
+import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
+import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component';
+import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
 
 
 
@@ -38,6 +41,9 @@ import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-cat
     AtualizarProdutoComponent,
     FundadoresComponent,
     CadastrarCategoriaComponent,
+    AtualizarCategoriaComponent,
+    DeletarProdutoComponent,
+    DeletarCategoriaComponent,
     
   ],
   imports: [

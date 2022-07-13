@@ -1,7 +1,7 @@
 <div class="container-fluid cor d-flex justify-content-center mt-5 mb-5 bgtitulo ">
     <div class="row ">
         <div class="col-md-12 ">
-            <h2>CADASTRE UMA NOVA CATEGORIA!</h2>
+            <h2>ATUALIZE SUA CATEGORIA!</h2>
         </div>
     </div>
 </div>
@@ -14,14 +14,14 @@
                 <form>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome da Categoria*</label>
-                        <input [(ngModel)]="categoria.nomeCat" type="text" class="form-control"
+                        <input type="text" class="form-control"
                             id="exampleFormControlInput1" placeholder="Seu produto">
                     </div>
                 </form>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Escreva uma descrição para sua categoria:</label>
-                    <textarea [(ngModel)]="categoria.tipo" class="form-control" id="exampleFormControlTextarea1"
+                    <textarea  class="form-control" id="exampleFormControlTextarea1"
                         rows="9"></textarea>
                 </div>
             </div>
@@ -39,7 +39,7 @@
     <div class="row mt-4 mb-5">
         <div class="col-md-12">
             <button type="submit" class="mr-5 btn bgcor1">CANCELAR</button>
-            <button (click)="postCategoria()" type="submit" class="btn bgcor">FINALIZAR CADASTRO</button>
+            <button  type="submit" class="btn bgcor">SALVAR ATUALIZAÇÃO</button>
         </div>
     </div>
 </div>

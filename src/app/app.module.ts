@@ -21,6 +21,7 @@ import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-cat
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
 import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component';
 import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
+import { ProdutoComponent } from './perfil/produto/produto.component';
 
 
 
@@ -44,6 +45,7 @@ import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria
     AtualizarCategoriaComponent,
     DeletarProdutoComponent,
     DeletarCategoriaComponent,
+    ProdutoComponent,
     
   ],
   imports: [

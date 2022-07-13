@@ -20,14 +20,22 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.linkProduto + "/all")
+    return this.http.get<Produto[]>(this.linkProduto + "/all", this.token)
   }
 
-  getProdutosById(id:number): Observable<Produto>{
-    return this.http.get<Produto>(this.linkProduto + `/${id}`)
+  getProdutosById(id: number): Observable<Produto> {
+    return this.http.get<Produto>(this.linkProduto + `/${id}`,  this.token)
   }
 
-  postProdutos(produto: Produto): Observable<Produto>{
+  postProdutos(produto: Produto): Observable<Produto> {
     return this.http.post<Produto>(this.linkProduto, produto, this.token)
+  }
+
+  putProdutos(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(this.linkProduto, produto, this.token)
+  }
+
+  deleteProdutos(id: number) {
+    return this.http.delete<Produto>(this.linkProduto + `/${id}`, this.token)
   }
 }

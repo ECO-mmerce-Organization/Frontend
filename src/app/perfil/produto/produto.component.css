@@ -1,0 +1,33 @@
+.back-product {
+    height: 70vh;
+    width: 100vw;
+    background-color: aquamarine;
+}
+
+.titulo-pg {
+    height: 50vh;
+}
+
+.img-bg {
+    background-image: url('https://i.imgur.com/4dBMMCi.jpghttps://i.imgur.com/4aj0gf9.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 5px 5px rgba(41, 41, 41, 0.192);
+
+}
+
+.titulo-filtro {
+    color: rgb(255, 123, 0);
+}
+
+.linhas-titulo {
+    background-color: rgb(255, 123, 0);
+}
+
+
+.text-range {
+    font-size: 10pt;
+    color: rgb(153, 153, 153);
+}
+

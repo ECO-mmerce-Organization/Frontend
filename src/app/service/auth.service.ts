@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -15,6 +16,11 @@ export class AuthService {
   constructor(
     private http: HttpClient
   ) { }
+  
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token) //Estamos trazendo as configurações de HEADERS para essa váriavel
+  }
+  
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.linkAuth + "/cadastrar", usuario)
@@ -31,5 +37,9 @@ export class AuthService {
       console.log("Não é uma ong")
     }
   }
+  getUserById (id :number): Observable<Usuario>{
+    return this.http.get<Usuario>(this.linkAuth+ `/${id}`, this.token)
+  }
+
 
 }

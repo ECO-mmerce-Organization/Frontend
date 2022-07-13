@@ -20,14 +20,14 @@ export class CategoriaService {
   }
 
   getAllCategorias(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>(this.linkCategoria)
+    return this.http.get<Categoria[]>(this.linkCategoria, this.token)
   }
 
   getCategoriasById(id:number): Observable<Categoria>{
-    return this.http.get<Categoria>(this.linkCategoria + `/${id}`)
+    return this.http.get<Categoria>(this.linkCategoria + `/${id}`, this.token)
   }
 
   postCategoria (categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>(this.linkCategoria, categoria)
-  }
+    return this.http.post<Categoria>(this.linkCategoria, categoria, this.token)
+  } 
 }

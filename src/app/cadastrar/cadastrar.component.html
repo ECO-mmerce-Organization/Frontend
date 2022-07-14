@@ -1,54 +1,74 @@
-<div class="container-fluid">
-    <div class="row align-items-center bg-gradient-primary" id="">
-        <div class="col-md-6" id="img-bg"></div>
-        <div class="col-md-6 my-5 ">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-8 form-cadastro">
+<div class="container-fluid background-page texture my-3 ">
 
-                    <h1 class="text-center">Cadastro</h1>
+    <div class="row d-flex align-items-lg-center"> 
+
+        <div class="card container-fluid col-md-4 mt-4 mx-5  ">
+            
+            <div class="row  d-flex justify-content-center ">
+                <div class="col-md-6 " id="media">
+
+                    <h1 class="text-center mx-3 my-4">Cadastro</h1>
 
                     <div class="input-style-l mb-4">
+                        <span>Nome</span>
                         <input [(ngModel)]="usuario.nome" type="text" name="nome" required="required">
-                        <label for="nome">Nome</label>
+                        
                     </div>
 
                     <div class="input-style-l mb-4">
+                        <span>Usuário</span>
                         <input [(ngModel)]="usuario.usuario" type="text" name="usuario" required="required">
-                        <label for="usuario">Usuário</label>
+                    
                     </div>
 
                     <div class="input-style-l mb-4">
+                        <span>Senha</span>
                         <input (input)="confirmarSenha($event)" type="password" name="senha" required="required">
-                        <label for="senha">Senha</label>
+                        
                     </div>
 
                     <div class="input-style-l mb-4">
+                        <span>Confirmar Senha</span>
                         <input [(ngModel)]="usuario.senha" type="password" name="ConfirmaSenha" required="required">
-                        <label for="ConfirmaSenha">Confirmar Senha</label>
+                        
                     </div>
 
                     <div class="input-style-l mb-4">
+                        <span>Link da Foto</span>
                         <input [(ngModel)]="usuario.foto" type="text" name="foto" required="required">
-                        <label for="usuario">Link da Foto</label>
+                        
                     </div>
 
-                    <div class="mb-2">
-                        <input class="m-lg-2" type="radio" name="webmaster" value=false (change)="tipoUser($event)" />Usuário
-                        <input class="m-lg-2" type="radio" name="webmaster" value=true (change)="tipoUser($event)" />Administrador
+                    <div class="mb-3">
+                        <input class="m-lg-3" type="radio" name="webmaster" value=false (change)="tipoUser($event)" />Usuário
+                        <br>
+                        <input class="m-lg-3" type="radio" name="webmaster" value=true (change)="tipoUser($event)" />Administrador
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn btn-danger mr-4" routerLink="/login">Cancelar</button>
-                        <button type="submit" class="btn btn-dark" (click)='cadastrar()'>Cadastrar</button>
+                        <button type="submit" class="btn btn-success mr-4" (click)='cadastrar()'>Cadastrar</button>
+                        <button type="submit" class="btn btn-dark " routerLink="/login">Cancelar</button>
                     </div>
 
                     <hr class="my-4">
 
-                    <p class="text-center">
+                    <!-- <p class="text-center">
                         Já tem uma conta? <a href="" routerLink="/login">Logar</a>
-                    </p>
+                    </p> -->
+                    
                 </div>
             </div>
+
         </div>
+
+        <div class="col-md-4 mt-4">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 img-bg ml-5">
+
+                </div>
+            </div>
+
+        </div>
+        
     </div>
 </div>

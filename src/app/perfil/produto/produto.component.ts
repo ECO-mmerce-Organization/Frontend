@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from 'src/app/model/Produto';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
@@ -18,11 +19,17 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private authService : AuthService,
+    private router:Router
 
 
   ) { }
 
   ngOnInit() {
+    if (environment.token == '') {
+      alert('Sua sessão expirou!')
+      this.router.navigate(['/login'])
+    }
+
     this.getByUserId()
 
   }

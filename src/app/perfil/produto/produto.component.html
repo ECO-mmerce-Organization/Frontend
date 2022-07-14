@@ -101,15 +101,15 @@
                 <div class="px-lg-0">
                     <div class="row">
                         <!-- Gallery item -->
-                        <div *ngFor="let produto of user.produto" class="col-xl-3 col-lg-4 col-md-6 mb-2">
+                        <div *ngFor="let produtos of user.produto" class="col-xl-3 col-lg-4 col-md-6 mb-2">
 
                             <div class="bg-white rounded shadow-sm">
 
-                                <img src="{{produto.foto}}" alt="" class="img-fluid" height="250px" width="250px">
+                                <img src="{{produtos.foto}}" alt="" class="img-fluid" height="250px" width="250px">
 
                                 <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">{{produto.nomeProd}}</a></h5>
-                                    <p class="small text-muted mb-0">{{produto.descricao}}</p>
+                                    <h5> <a href="#" class="text-dark">{{produtos.nomeProd}}</a></h5>
+                                    <p class="small text-muted mb-0">{{produtos.descricao}}</p>
 
                                     <div class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
 

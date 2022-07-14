@@ -17,16 +17,21 @@ export class ProdutosComponent implements OnInit {
   listaProdutos: Produto[]
 
   produto: Produto = new Produto
-  categoria: Categoria= new Categoria
+  categoria: Categoria = new Categoria
 
   idProduto: number
   idCategoria: number
+
+  posts:any;
+  p: number = 1;
+
 
   constructor(
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
     private router: Router
   ) { }
+
 
   ngOnInit() {
     if (environment.token == '') {
@@ -38,13 +43,14 @@ export class ProdutosComponent implements OnInit {
 
   }
 
+
   // CATEGORIAS
   getAllCategorias() {
     this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
       console.log(this.listaCategorias)
     })
-  } 
+  }
 
   // PRODUTOS
   getAllProdutos() {
@@ -54,12 +60,12 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  findProdutosById(){
+  findProdutosById() {
     this.produtoService.getProdutosById(this.idProduto)
   }
 
-  postProduto(){
-    this.produtoService.postProdutos(this.produto).subscribe((resp: Produto)=>{
+  postProduto() {
+    this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
     })
   }

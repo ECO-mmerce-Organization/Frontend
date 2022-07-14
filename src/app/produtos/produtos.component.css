@@ -31,3 +31,6 @@
     color: rgb(153, 153, 153);
 }
 
+.pagination-orientation {
+    align-items: flex-end;
+}

@@ -12,7 +12,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { OngsComponent } from './ongs/ongs.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
@@ -22,8 +22,9 @@ import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-cat
 import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component';
 import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
-
-
+import { TokenInterceptorService } from './service/token-interceptor-service.service';
+import { MyCustomPaginatorIntlComponent } from './my-custom-paginator-intl/my-custom-paginator-intl.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -46,19 +47,27 @@ import { ProdutoComponent } from './perfil/produto/produto.component';
     DeletarProdutoComponent,
     DeletarCategoriaComponent,
     ProdutoComponent,
+    MyCustomPaginatorIntlComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
 
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }],
+  }, 
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+],
 
   bootstrap: [AppComponent]
 })

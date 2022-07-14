@@ -14,8 +14,9 @@ export class AtualizarProdutoComponent implements OnInit {
   produto: Produto = new Produto
   categoria: Categoria = new Categoria
   idCategoria: number
-  listaCategoria : Categoria[]
-  
+  listaCategorias: Categoria[]
+
+
 
 
   constructor(
@@ -25,22 +26,43 @@ export class AtualizarProdutoComponent implements OnInit {
     private categoriaService: CategoriaService
 
 
+
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
+    this.getAllCategorias()
+    let id = this.route.snapshot.params['id']
+    this.findProdutoById(id)
 
   }
+
+  findByIdCategoria() {
+    this.categoriaService.getCategoriasById(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+
   atualizar() {
     this.categoria.id = this.idCategoria
     this.produto.categoria = this.categoria
 
 
-    this.produtoService.putProdutos(this.produto).subscribe((resp: Produto)=>{
+    this.produtoService.putProdutos(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert('Produto atualizado com sucesso!')
+      this.router.navigate(['/produto'])
     })
 
   }
-
+  getAllCategorias() {
+    this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
+  }
+  findProdutoById(id: number) {
+    this.produtoService.getProdutosById(id).subscribe((resp: Produto) => {
+      this.produto = resp
+    })
+  }
 }

@@ -22,9 +22,15 @@ import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-cat
 import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.component';
 import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
+<<<<<<< HEAD
 import { TokenInterceptorService } from './service/token-interceptor-service.service';
 import { MyCustomPaginatorIntlComponent } from './my-custom-paginator-intl/my-custom-paginator-intl.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+=======
+import { TokenInterceptorService } from './service/token-interceptor.service';
+
+
+>>>>>>> f03f9cbfc26acc281e32b6b89e6e5c369dc24d7e
 
 
 
@@ -61,6 +67,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
+<<<<<<< HEAD
   }, 
   {
     provide: HTTP_INTERCEPTORS,
@@ -68,6 +75,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     multi: true
   }
 ],
+=======
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
+>>>>>>> f03f9cbfc26acc281e32b6b89e6e5c369dc24d7e
 
   bootstrap: [AppComponent]
 })

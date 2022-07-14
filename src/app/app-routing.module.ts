@@ -23,8 +23,8 @@ const routes: Routes = [
   {path: 'produto', component: ProdutoComponent},
 
   {path: 'cadastrarProduto', component: CadastrarProdutoComponent},
-  {path: 'atualizarProduto', component: AtualizarProdutoComponent},
-  {path: 'deletarProduto', component: DeletarProdutoComponent},
+  {path: 'atualizarProduto/:id', component: AtualizarProdutoComponent},
+  {path: 'deletarProduto/:id', component: DeletarProdutoComponent},
   
   {path: 'cadastrarCategoria', component: CadastrarCategoriaComponent},
   {path: 'atualizarCategoria', component: AtualizarCategoriaComponent},

@@ -10,6 +10,7 @@ import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.compo
 import { FundadoresComponent } from './fundadores/fundadores.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OngsComponent } from './ongs/ongs.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
 import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
 import { ProdutosComponent } from './produtos/produtos.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'produto', component: ProdutoComponent},
+  {path: 'ongs', component: OngsComponent},
 
   {path: 'produtos', component: ProdutosComponent},
   {path: 'produto-page/:id', component: PaginaProdutoComponent},

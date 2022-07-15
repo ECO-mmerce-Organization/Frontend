@@ -6,51 +6,49 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto d-flex align-items-center">
       <li class="nav-item active">
-        <img src="https://i.imgur.com/S4caNKA.jpg" alt="imagem do user" width="50px" height="50px"
-          class="img-fluid rounded-circle mr-3">
+        <a [routerLink]="[('/home')]"><img src="https://i.imgur.com/S4caNKA.jpg" alt="Logo do projeto" width="70px" height="70px"
+          class="img-fluid rounded-circle mr-3"></a>
         <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light mt-1" href="#">Início</a>
+        <a class="nav-link text-light fs-16" [routerLink]="['/home']">Início</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-light mt-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-light  fs-16" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-expanded="false">
           Produtos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Acessórios</a>
+          <a class="dropdown-item" href="#">Cosméticos</a>
+          <a class="dropdown-item" href="#">Decoração</a>
+          <a class="dropdown-item" href="#">Papelaria e Embalagens</a>
+          <a class="dropdown-item" href="#">Vestimentas</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" [routerLink]="['/produtos']">Todos os Produtos</a>
         </div>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-light mt-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-expanded="false">
+        <a class="nav-link text-light fs-16" href="#" id="navbarDropdown" role="button" aria-expanded="false"
+          [routerLink]="['/ongs']">
           ONGs
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-light mt-1">Contato</a>
+        <a class="nav-link text-light fs-16" role="button" [routerLink]="['/fundadores']">Nosso Time</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 d-flex justify-center">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0 mr-4" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="text" id="nome" placeholder="O que está procurando?" aria-label="Search"
+        [(ngModel)]="nomePost">
+      <button class="btn bgcor my-2 my-sm-0 mr-4" type="submit">Pesquisar</button>
     </form>
   </div>
-  <div><a class="btn btn-outline-light btn-floating m-1" href=""
-    target="_blank" style="border-radius: 100%; border-width: 2px;" role="button"><i
-        class="bi bi-bag"></i></a></div>
-        <div><a class="btn btn-outline-light btn-floating m-1" href=""
-          target="_blank" style="border-radius: 100%; border-width: 2px;" role="button"><i
-              class="fa fa-user-o"aria-hidden="true"></i></a></div>
+  <div><a class="btn btn-outline-light btn-floating m-1" href="" target="_blank"
+      style="border-radius: 100%; border-width: 2px;" role="button"><i class="bi bi-bag"></i></a></div>
+  <div><a class="btn btn-outline-light btn-floating m-1" href="" target="_blank"
+      style="border-radius: 100%; border-width: 2px;" role="button"><i class="fa fa-user-o" aria-hidden="true"
+        [routerLink]="['/login']"></i></a></div>
 </nav>

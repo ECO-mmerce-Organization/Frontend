@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Produto } from '../model/Produto';
+import { ProdutosComponent } from '../produtos/produtos.component';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto
+  
+  nomePost: string
+  listaProdutos: Produto[]
+  produtos: ProdutosComponent
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private produtoService: ProdutoService,
+  ) { }
+
+  ngOnInit(){
   }
 
+  getAllProdutos() {
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      console.log(this.listaProdutos)
+    })
+  }
+
+  // findByNomeProduto(){
+  //   if(this.nomePost == ''){
+  //     this.getAllProdutos()
+  //   }else{
+  //     this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[])=>{
+  //       this.listaProdutos = resp
+  //     })
+  //   }
+  //
 }

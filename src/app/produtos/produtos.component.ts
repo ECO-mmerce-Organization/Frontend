@@ -33,7 +33,8 @@ export class ProdutosComponent implements OnInit {
 
   idProduto: number
   idCategoria: number
-
+  
+  precoInicio: number
   precoFinal: number
   listaProdutosPreco: Produto[]
 
@@ -67,7 +68,7 @@ export class ProdutosComponent implements OnInit {
       console.log(this.listaOngs)
     })
   }
-
+  //=========================== FIM ===========================
 
   // CATEGORIAS
   getAllCategorias() {
@@ -76,12 +77,11 @@ export class ProdutosComponent implements OnInit {
       console.log(this.listaCategorias)
     })
   }
-
+  //=========================== FIM ===========================
   // PRODUTOS
   getAllProdutos() {
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
-      console.log(this.listaProdutos)
     })
   }
 
@@ -89,47 +89,29 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.getProdutosById(this.idProduto)
   }
 
-
-
-
   postProduto() {
     this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
     })
   }
-
+  //=========================== FIM ===========================
 
   //FILTROS
-
   findProdutosByPreco() {
     this.produtoService.getProdutosByValor(this.precoFinal).subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
-      console.log(this.listaProdutosPreco)
     })
   }
 
-
-  criarVar() {
-    for (let i = 0; i < this.listaOngs.length; i++) {
-      console.log('ong' + i)
-    }
-  }
-
   filtrar() {
-    console.log("Cat1" + this.cat1)
-    console.log("Cat2" + this.cat2)
-
-    console.log("Ong1" + this.ong1)
-    console.log("Ong2" + this.ong2)
   }
 
   categoria2() {
     this.cat2 = true
-    // console.log(this.cat2)
   }
 
   categoria1() {
     this.cat1 = true
-    // console.log(this.cat1)
   }
+  //=========================== FIM ===========================
 }

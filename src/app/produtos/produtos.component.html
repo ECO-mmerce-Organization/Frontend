@@ -27,7 +27,8 @@
 
                     <div class="input-group input-group-sm mb-3">
                         <input type="text" class="form-control" placeholder="Pesquisar Produtos..."
-                            aria-label="pesquisaProdutos" aria-describedby="button-addon2" id="input-search" [ngModel]="inputFiltro">
+                            aria-label="pesquisaProdutos" aria-describedby="button-addon2" id="input-search"
+                            [ngModel]="inputFiltro">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary text-sm-center" type="button"
                                 id="button-addon2">Pesquisar</button>
@@ -40,13 +41,19 @@
                     <hr class="linhas-titulo mb-1 mt-0">
 
                     <form>
-                        <div class="form-group">
-                            <input type="range" class="form-control-range" id="formControlRange">
-                            <label class="d-flex justify-content-end text-range" for="rangeInput">preço R$ VarMin - R$
-                                max</label>
-                            <input type="text" class="form-control" [(ngModel)]="precoFinal">
-                            <button class="btn btn-dark" (click)="findProdutosByPreco()">PRECO</button>
-                            <button class="btn btn-dark" (click)="getAllProdutos()">Limpar</button>
+                        <div class="form-group d-flex align-content-end">
+                            <!-- <input type="range" class="form-control-range" id="formControlRange"> -->
+                            <!-- <label class="d-flex justify-content-end text-range" for="rangeInput">preço R$ VarMin - R$max</label> -->
+                            
+                            <div class="form-control align-content-lg-around">
+                                <input type="number" class="form-control mb-3" [(ngModel)]="precoInicio">
+                                <input type="number" class="form-control mb-3" [(ngModel)]="precoFinal">
+                            </div>
+
+                            <div class="d-flex align-content-end align-items-end">
+                                <button class="btn-green-sm mr-2 mt-2" (click)="findProdutosByPreco()">Filtrar</button>
+                                <button class="btn-cancel-sm" (click)="getAllProdutos()">Limpar</button>
+                            </div>
                         </div>
                     </form>
 
@@ -97,9 +104,6 @@
                     </div>
 
                     <button class="btn btn-sm" (click)="filtrar()">Filtrar</button>
-                    <button class="btn btn-sm" (click)="criarVar()">FOR</button>
-                    <button class="btn btn-sm">ONGS</button>
-
                 </div>
 
 

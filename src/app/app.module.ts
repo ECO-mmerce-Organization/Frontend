@@ -23,6 +23,8 @@ import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.compo
 import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
 
 
 
@@ -47,13 +49,15 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
     DeletarProdutoComponent,
     DeletarCategoriaComponent,
     ProdutoComponent,
+    PaginaProdutoComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
 
   ],
   providers: [{

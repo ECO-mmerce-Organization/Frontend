@@ -37,9 +37,12 @@ export class AuthService {
       console.log("Não é uma ong")
     }
   }
+
   getUserById (id :number): Observable<Usuario>{
     return this.http.get<Usuario>(this.linkAuth+ `/${id}`, this.token)
   }
 
-
+  getOngs():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.linkAuth + "/ong")
+  }
 }

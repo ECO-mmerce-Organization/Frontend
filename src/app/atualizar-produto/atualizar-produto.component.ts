@@ -11,13 +11,12 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./atualizar-produto.component.css']
 })
 export class AtualizarProdutoComponent implements OnInit {
+
+
   produto: Produto = new Produto
   categoria: Categoria = new Categoria
   idCategoria: number
   listaCategorias: Categoria[]
-
-
-
 
   constructor(
     private router: Router,
@@ -25,13 +24,13 @@ export class AtualizarProdutoComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService
 
-
-
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
+    
     this.getAllCategorias()
+
     let id = this.route.snapshot.params['id']
     this.findProdutoById(id)
 
@@ -60,6 +59,7 @@ export class AtualizarProdutoComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
+
   findProdutoById(id: number) {
     this.produtoService.getProdutosById(id).subscribe((resp: Produto) => {
       this.produto = resp

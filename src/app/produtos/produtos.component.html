@@ -1,128 +1,164 @@
-<div class="row d-flex justify-content-center align-items-center bg-dark titulo-pg">
+<div class="row d-flex justify-content-center align-items-center bg-dark titulo-pg m-0">
     <div class="col-md-12">
-        <h1 class="text-center text-white m-2">PRODUTOS</h1>
+        <h1 class="text-center text-white">PRODUTOS</h1>
         <h5 class="text-center text-white mt-0">Todos os produtos</h5>
     </div>
 </div>
 
 <div class="container my-4">
 
-    <div class="row">
-        <div class="col-md-3 form-cadastro py-4 titulo-filtro">
-            <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR NOME</h4>
-            <hr class="linhas-titulo mb-4 mt-0">
+    <div class="row d-flex justify-content-end">
+        <div class="col-md-12">
 
-            <div class="input-group input-group-sm mb-3">
-                <input type="text" class="form-control" placeholder="Pesquisar Produtos..."
-                    aria-label="pesquisaProdutos" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary text-sm-center" type="button"
-                        id="button-addon2">Pesquisar</button>
-                </div>
+
+
+
+            <div class="d-flex align-content-end align-items-end justify-content-end">
+                <pagination-controls class="pagination-align" (pageChange)="p = $event" previousLabel="Voltar"
+                    nextLabel="Avançar">
+                </pagination-controls>
             </div>
 
+            <div class="row">
 
-            <!-- HEAD -->
-            <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR VALOR</h4>
+                <div class="col-md-3 form-cadastro py-4 titulo-filtro">
+                    <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR NOME</h4>
+                    <hr class="linhas-titulo mb-4 mt-0">
 
-            <hr class="linhas-titulo mb-1 mt-0">
+                    <div class="input-group input-group-sm mb-3">
+                        <input type="text" class="form-control" placeholder="Pesquisar Produtos..."
+                            aria-label="pesquisaProdutos" aria-describedby="button-addon2" id="input-search" [ngModel]="inputFiltro">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary text-sm-center" type="button"
+                                id="button-addon2">Pesquisar</button>
+                        </div>
+                    </div>
 
-            <form>
-                <div class="form-group">
-                    <input type="range" class="form-control-range" id="formControlRange">
-                    <label class="d-flex justify-content-end text-range" for="rangeInput">preço R$ VarMin - R$
-                        max</label>
-                </div>
-            </form>
+                    <!-- HEAD -->
+                    <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR VALOR</h4>
 
-            <button class="btn-sm btn-dark" (click)="getAllProdutos()">Enviar Prod</button>
-            <button class="btn-sm btn-dark" (click)="getAllCategorias()">Enviar Cat</button>
+                    <hr class="linhas-titulo mb-1 mt-0">
 
-            <div class="d-flex align-content-end align-items-end">
+                    <form>
+                        <div class="form-group">
+                            <input type="range" class="form-control-range" id="formControlRange">
+                            <label class="d-flex justify-content-end text-range" for="rangeInput">preço R$ VarMin - R$
+                                max</label>
+                        </div>
+                    </form>
 
-            </div>
-            <!-- END -->
+                    <div class="d-flex align-content-end align-items-end">
+                    </div>
+                    <!-- END -->
 
+                    <!-- CHECK-BOXES -->
+                    <div id="checkboxes2" class=" align-content-center">
+                        <!-- HEAD -->
+                        <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR CATEGORIA</h4>
 
-            <!-- CHECK-BOXES -->
-            <div id="checkboxes2" class=" align-content-center">
-                <!-- HEAD -->
-                <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR CATEGORIA</h4>
+                        <hr class="linhas-titulo mb-1 mt-0">
+                        <!-- END -->
 
-                <hr class="linhas-titulo mb-1 mt-0">
-                <!-- END -->
-
-                <!-- CONTENT -->
-                <div>
-                    <label for="cat1" class="select_label d-block mb-0">
-                        <input type="checkbox" value="cat1" name="cat1" id="cat1" class="m-lg-2" />Categoria 1
-                        <span class="select_label-icon"></span>
-                    </label>
-                </div>
-
-                <div>
-                    <label for="cat2" class="select_label d-block">
-                        <input type="checkbox" value="cat2" name="cat2" id="cat2" class="m-lg-2" />Categoria 2
-                        <span class="select_label-icon"></span>
-                    </label>
-                </div>
-                <!-- END -->
-            </div>
-
-            <!-- CHECK-BOXES -->
-            <div id="checkboxes2" class="">
-                <!-- HEAD -->
-                <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR ONG</h4>
-
-                <hr class="linhas-titulo mb-1 mt-0">
-                <!-- END -->
-
-                <!-- CONTENT -->
-                <div>
-                    <label for="ong1" class="select_label d-block mb-0">
-                        <input type="checkbox" value="ong1" name="ong1" id="ong1" class="m-lg-2" />ONG 1
-                        <span class="select_label-icon"></span>
-                    </label>
-                </div>
-
-                <div>
-                    <label for="ong2" class="select_label d-block">
-                        <input type="checkbox" value="ong2" name="ong2" id="ong2" class="m-lg-2" />ONG 2
-                        <span class="select_label-icon"></span>
-                    </label>
-                </div>
-                <!-- END -->
-            </div>
-
-        </div>
-
-        <div class="col-md-9">
-
-            <div class="container-fluid my-3">
-                <div class="px-lg-0">
-                    <div class="row">
-                        <!-- Gallery item -->
-                        <div *ngFor="let produto of listaProdutos" class="col-xl-3 col-lg-4 col-md-6 mb-2">
-
-                            <div class="bg-white rounded shadow-sm">
-
-                                <img src="{{produto.foto}}" alt="" class="img-fluid" height="250px" width="250px">
-
-                                <div class="p-2">
-                                    <h5> <a href="#" class="text-dark">{{produto.nomeProd}}</a></h5>
-                                    <p class="small text-muted mb-0">{{produto.descricao}}</p>
-
-                                    <div class="d-flex align-items-center justify-content-center rounded-pill bg-light px-3 py-2 mt-2">
-
-                                        <div class="badge badge-danger px-3 rounded-pill font-weight-normal">Comprar</div>
-
-                                    </div>
-                                </div>
+                        <!-- CONTENT -->
+                        <div class="rolagem">
+                            <div *ngFor="let categoria of listaCategorias">
+                                <label for="cat1" class="select_label d-block mb-0">
+                                    <input type="checkbox" value="{{categoria.id}}" name="cat1" id="{{categoria.id}}"
+                                        class="m-lg-2" (change)="cat1 = !cat1" />{{categoria.nomeCat}}
+                                    <span class="select_label-icon"></span>
+                                </label>
                             </div>
                         </div>
-                        <!-- End -->
+                        <!-- END -->
+                    </div>
+
+                    <!-- CHECK-BOXES -->
+                    <div id="checkboxes2" class="">
+                        <!-- HEAD -->
+                        <h4 class="mt-4 d-flex justify-content-end titulo-filtro">POR ONG</h4>
+
+                        <hr class="linhas-titulo mb-1 mt-0">
+                        <!-- END -->
+
+                        <!-- CONTENT -->
+                        <div class="rolagem">
+                            <div *ngFor="let ong of listaOngs">
+                                <label for="ong + {{ong.id}}" class="select_label d-block mb-0">
+                                    <input type="checkbox" value="{{ong.id}}" name="ong1" id="{{ong.id}}" class="m-lg-2"
+                                        (change)="ong1 = !ong1" />{{ong.nome}}
+                                    <span class="select_label-icon"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- END -->
+                    </div>
+
+                    <button class="btn btn-sm" (click)="filtrar()">Filtrar</button>
+                    <button class="btn btn-sm" (click)="criarVar()">FOR</button>
+                    <button class="btn btn-sm">ONGS</button>
+
+                </div>
+
+
+                <div class="col-md-9 d-flex">
+
+                    <div class="container-fluid my-3">
+                        <div class="px-lg-0">
+
+                            <div class="row d-flex align-content-center">
+                                <!-- Gallery item -->
+
+                                <div *ngFor="let produto of listaProdutos | paginate: { itemsPerPage: 10, currentPage: p }"
+                                    class="col-md-4 mb-2">
+
+                                    <div class="bg-white rounded shadow-sm">
+
+                                        <img [routerLink]="['/produto-page', produto.id]" src="{{produto.foto}}" alt=""
+                                            class="img-fluid ponteiro" height="250px" width="250px">
+
+                                        <div class="p-2">
+                                            <h5>
+                                                <a [routerLink]="['/produto-page', produto.id]"
+                                                    class="text-dark">{{produto.nomeProd}}</a>
+                                            </h5>
+
+                                            <p class="small text-muted mb-0">{{produto.descricao}}</p>
+
+                                            <h6>
+                                                <a class="text-dark">{{produto.preco | currency: 'BRL'}}</a>
+                                            </h6>
+
+                                            <div [routerLink]="['/produto-page', produto.id]"
+                                                class="text-white btn-sm btn-edit d-flex align-items-center justify-content-center px-3 py-2 mt-2 text-center ponteiro rounded-pill">
+                                                Comprar
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- End -->
+
+                            </div>
+
+
+                        </div>
 
                     </div>
 
                 </div>
+
             </div>
+
+            <div class="d-flex align-content-end align-items-end justify-content-end">
+                <pagination-controls class="pagination-align" (pageChange)="p = $event" previousLabel="Voltar"
+                    nextLabel="Avançar">
+                </pagination-controls>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

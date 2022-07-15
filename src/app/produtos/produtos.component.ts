@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
@@ -34,6 +34,10 @@ export class ProdutosComponent implements OnInit {
   idProduto: number
   idCategoria: number
 
+  precoFinal: number
+  listaProdutosPreco: Produto[]
+
+
   //VAR PAGINATION
   p: number = 1;
 
@@ -41,7 +45,8 @@ export class ProdutosComponent implements OnInit {
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
     private usuarioService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -54,25 +59,6 @@ export class ProdutosComponent implements OnInit {
     this.getAllOngs()
     this.getAllCategorias()
   }
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   //USUARIOS
   getAllOngs() {
@@ -103,6 +89,9 @@ export class ProdutosComponent implements OnInit {
     this.produtoService.getProdutosById(this.idProduto)
   }
 
+
+
+
   postProduto() {
     this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
@@ -111,6 +100,15 @@ export class ProdutosComponent implements OnInit {
 
 
   //FILTROS
+
+  findProdutosByPreco() {
+    this.produtoService.getProdutosByValor(this.precoFinal).subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      console.log(this.listaProdutosPreco)
+    })
+  }
+
+
   criarVar() {
     for (let i = 0; i < this.listaOngs.length; i++) {
       console.log('ong' + i)

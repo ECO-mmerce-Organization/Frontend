@@ -9,7 +9,9 @@ import { Produto } from '../model/Produto';
 })
 export class ProdutoService {
 
-  linkProduto = 'https://ecommercegrupo6.herokuapp.com/produtos'
+  // linkProduto = 'https://ecommercegrupo6.herokuapp.com/produtos'
+  linkProduto = 'http://localhost:8080/produtos'
+
 
   constructor(
     private http: HttpClient
@@ -27,6 +29,10 @@ export class ProdutoService {
     return this.http.get<Produto>(this.linkProduto + `/${id}`,  this.token)
   }
 
+  getProdutosByValor(preco:number) : Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.linkProduto + `/valorinicial/1/valorfinal` + `/${preco}`)
+  }
+
   postProdutos(produto: Produto): Observable<Produto> {
     return this.http.post<Produto>(this.linkProduto, produto, this.token)
   }
@@ -38,4 +44,5 @@ export class ProdutoService {
   deleteProdutos(id: number) {
     return this.http.delete<Produto>(this.linkProduto + `/${id}`, this.token)
   }
+
 }

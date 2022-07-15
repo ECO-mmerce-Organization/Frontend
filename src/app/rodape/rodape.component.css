@@ -1,7 +1,16 @@
 .footcolor{
- background-image: url(https://i.imgur.com/UZTMHpX.png%27);
-}
-
-.colorfoot{
-     background-color: #98BEA3;
-}
+     background-image: url(https://i.imgur.com/UZTMHpX.png%27);
+    }
+    
+    .colorfoot{
+         background-color: #98BEA3;
+    }
+    
+    .size{
+         font-size: 50px;
+         
+    }
+    
+    .cor:hover{
+         color: #366A55 ;
+    }

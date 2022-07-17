@@ -34,12 +34,10 @@ export class DeletarProdutoComponent implements OnInit {
 
   }
 
-
   findProdutoById(id: number) {
     this.produtoService.getProdutosById(id).subscribe((resp: Produto) => {
       this.produto = resp
     })
   }
 
-  
 }

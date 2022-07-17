@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -33,7 +34,8 @@ export class ProdutosComponent implements OnInit {
 
   idProduto: number
   idCategoria: number
-  
+
+  //FILTRAR POR VALOR
   precoInicio: number
   precoFinal: number
   listaProdutosPreco: Produto[]
@@ -47,7 +49,7 @@ export class ProdutosComponent implements OnInit {
     private produtoService: ProdutoService,
     private usuarioService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private alertsService: AlertsService
   ) { }
 
   ngOnInit() {
@@ -60,6 +62,7 @@ export class ProdutosComponent implements OnInit {
     this.getAllOngs()
     this.getAllCategorias()
   }
+
 
   //USUARIOS
   getAllOngs() {
@@ -97,12 +100,33 @@ export class ProdutosComponent implements OnInit {
   //=========================== FIM ===========================
 
   //FILTROS
+
+  //Filtrar por intervado de valor
   findProdutosByPreco() {
-    this.produtoService.getProdutosByValor(this.precoFinal).subscribe((resp: Produto[]) => {
+    this.produtoService.getProdutosByValor(this.precoInicio, this.precoFinal).subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
+      this.alertsService.showAlertSuccess('OK')
+    }, erro => {
+      if (erro.status == 404) {
+        this.alertsService.showAlertDanger('Lista vazia')
+      }
+      if (erro.status == 400) {
+        this.alertsService.showAlertDanger('Requisição Inválida')
+      }
     })
   }
 
+  clearFiltro() {
+    let precoFinalx: number
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      this.precoFinal = precoFinalx
+      this.precoInicio = 0
+    })
+  }
+
+
+  //Filtrar por ONGs
   filtrar() {
   }
 

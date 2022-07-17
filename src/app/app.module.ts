@@ -25,6 +25,9 @@ import { ProdutoComponent } from './perfil/produto/produto.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -50,6 +53,7 @@ import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto
     DeletarCategoriaComponent,
     ProdutoComponent,
     PaginaProdutoComponent,
+    AlertsComponent,
     
   ],
   imports: [
@@ -57,8 +61,8 @@ import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    ModalModule.forRoot()
   ],
   providers: [{
     provide: LocationStrategy,

@@ -19,7 +19,8 @@ export class CadastrarCategoriaComponent implements OnInit {
     private categoriaService: CategoriaService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scroll(0, 0)
   }
 
   postCategoria() {

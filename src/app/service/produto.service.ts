@@ -29,8 +29,8 @@ export class ProdutoService {
     return this.http.get<Produto>(this.linkProduto + `/${id}`,  this.token)
   }
 
-  getProdutosByValor(preco:number) : Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.linkProduto + `/valorinicial/1/valorfinal` + `/${preco}`)
+  getProdutosByValor(precoInicio:number, precoFim: number) : Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.linkProduto + `/valorinicial` + `/${precoInicio}` + `/valorfinal` + `/${precoFim}`)
   }
 
   postProdutos(produto: Produto): Observable<Produto> {

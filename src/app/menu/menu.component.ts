@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0, 0)
   }
 
   getAllProdutos() {
@@ -31,14 +32,4 @@ export class MenuComponent implements OnInit {
       console.log(this.listaProdutos)
     })
   }
-
-  // findByNomeProduto(){
-  //   if(this.nomePost == ''){
-  //     this.getAllProdutos()
-  //   }else{
-  //     this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[])=>{
-  //       this.listaProdutos = resp
-  //     })
-  //   }
-  //
 }

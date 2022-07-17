@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
   }
-  
+
   logar() {
     this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
       this.usuarioLogin = resp
@@ -30,12 +30,6 @@ export class LoginComponent implements OnInit {
       environment.foto = this.usuarioLogin.foto
       environment.id = this.usuarioLogin.id
       environment.ong = this.usuarioLogin.ong
-
-      console.log(environment.token)
-      console.log(environment.nome)
-      console.log(environment.foto)
-      console.log(environment.id)
-      console.log(environment.ong)
 
       this.router.navigate(['/home'])
 

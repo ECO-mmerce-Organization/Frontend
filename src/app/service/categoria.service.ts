@@ -31,4 +31,8 @@ export class CategoriaService {
   postCategoria (categoria: Categoria): Observable<Categoria>{
     return this.http.post<Categoria>(this.linkCategoria, categoria, this.token)
   } 
+
+  deleteCategoria(id: number) {
+    return this.http.delete(this.linkCategoria + `/${id}`, this.token)
+  }
 }

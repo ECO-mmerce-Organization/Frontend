@@ -15,6 +15,8 @@ export class ProdutoComponent implements OnInit {
   idUser = environment.id
   user: Usuario = new Usuario()
 
+  //VAR PAGINATION
+  p: number = 1;
 
   constructor(
     private authService : AuthService,

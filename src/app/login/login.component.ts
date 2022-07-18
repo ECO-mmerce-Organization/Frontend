@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
 
   constructor
     (private auth: AuthService,
-      private router: Router) {
+      private router: Router,
+      private toastrService: ToastrService
+    ) {
 
   }
 
@@ -33,12 +36,22 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/home'])
 
-    }, erro => {
-      if (erro.status == 401) {
-        alert('Usuário ou senha incorretos!')
-      }
+      this.toastrService.success('Logado com sucesso!', 'Login Efetuado', {
+        timeOut: 2200,
+        progressBar: true,
+        closeButton: true,
+        positionClass: 'toast-bottom-right'
+      })
+  }, erro => {
+  if (erro.status == 401) {
+    this.toastrService.error('Usuario ou senha incorretos!', 'Login não efetuado', {
+      timeOut: 2200,
+      progressBar: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right'
     })
   }
-
+})
+  }
 
 }

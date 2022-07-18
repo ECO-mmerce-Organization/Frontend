@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OngsComponent } from './ongs/ongs.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
+import { SlidesComponent } from './perfil/slides/slides.component';
 import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 
@@ -21,16 +22,19 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'produto', component: ProdutoComponent},
   {path: 'ongs', component: OngsComponent},
-
+  
+  
   {path: 'produtos', component: ProdutosComponent},
   {path: 'produto-page/:id', component: PaginaProdutoComponent},
-
+  
   {path: 'cadastrarProduto', component: CadastrarProdutoComponent},
   {path: 'atualizarProduto/:id', component: AtualizarProdutoComponent},
   {path: 'deletarProduto/:id', component: DeletarProdutoComponent},
   
+  // PAGINAS DE PERFIL
+  {path: 'slide', component: SlidesComponent},
+  {path: 'produto', component: ProdutoComponent},
   {path: 'cadastrarCategoria', component: CadastrarCategoriaComponent},
   {path: 'atualizarCategoria', component: AtualizarCategoriaComponent},
   {path: 'deletarCategoria', component: DeletarCategoriaComponent},

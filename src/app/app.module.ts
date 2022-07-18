@@ -31,6 +31,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlidesComponent } from './perfil/slides/slides.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProdutoComponent,
     PaginaProdutoComponent,
     AlertsComponent,
+    SlidesComponent,
     
   ],
   imports: [

@@ -9,8 +9,8 @@ import { Produto } from '../model/Produto';
 })
 export class ProdutoService {
 
-  // linkProduto = 'https://ecommercegrupo6.herokuapp.com/produtos'
-  linkProduto = 'http://localhost:8080/produtos'
+  linkProduto = 'https://ecommercegrupo6.herokuapp.com/produtos'
+  //linkProduto = 'http://localhost:8080/produtos'
 
 
   constructor(

@@ -9,8 +9,8 @@ import { Categoria } from '../model/Categoria';
 })
 export class CategoriaService {
 
-  // linkCategoria = 'https://ecommercegrupo6.herokuapp.com/categorias'
-  linkCategoria = 'http://localhost:8080/categorias'
+  linkCategoria = 'https://ecommercegrupo6.herokuapp.com/categorias'
+  //linkCategoria = 'http://localhost:8080/categorias'
 
   constructor(
     private http: HttpClient

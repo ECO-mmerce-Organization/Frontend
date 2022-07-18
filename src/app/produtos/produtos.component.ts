@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
@@ -27,7 +28,13 @@ export class ProdutosComponent implements OnInit {
   ong1: boolean = false
   ong2: boolean = false
 
+  listaOngsId: number[] = [0]
+  listaOngsTest: Usuario[]
+
   inputFiltro: string
+
+  checkboxx = document.getElementById('1') as HTMLInputElement | null;
+  checkboxx2 = document.getElementById('2') as HTMLInputElement | null;
 
   produto: Produto = new Produto
   categoria: Categoria = new Categoria
@@ -36,7 +43,7 @@ export class ProdutosComponent implements OnInit {
   idCategoria: number
 
   //FILTRAR POR VALOR
-  precoInicio: number
+  precoInicio: number = 0
   precoFinal: number
   listaProdutosPreco: Produto[]
 
@@ -49,7 +56,8 @@ export class ProdutosComponent implements OnInit {
     private produtoService: ProdutoService,
     private usuarioService: AuthService,
     private router: Router,
-    private alertsService: AlertsService
+    private alertsService: AlertsService,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit() {
@@ -71,13 +79,56 @@ export class ProdutosComponent implements OnInit {
       console.log(this.listaOngs)
     })
   }
+
+  addOng(idOng: any) {
+
+    this.listaOngs.map(function (e) { return e.id })
+
+    let existe = this.listaOngsId.indexOf(idOng) >= 0
+
+    console.log(existe)
+    if (!existe) {
+      this.listaOngsId.push(idOng); //ESTAMOS PEGANDO OS OBJ USUARIO DO TIPO ONG SELECIONADOS
+      this.listaOngs.slice(0, this.listaOngs.length)
+      this.listaOngs.push(idOng)
+      this.listaProdutos.push(idOng)
+      console.log(idOng)
+
+    }
+
+    console.log(idOng)
+    console.log('ID DA ONG ACIMA')
+    console.log('LISTA DE ONGS SELECIONADAS' + this.listaOngsId)
+
+  }
+
+  filtrarOng() {
+    let listaOngsId = this.listaOngs.map(function (e) { return e.id })
+    // this.listaOngss = this.listaOngs.map(function (e) { return e.id })
+
+    for(let i = 0; i < this.listaOngsId.length; i++){
+      this.listaOngs.map(function (e) { return e.id })
+      
+      console.log (listaOngsId[i])
+    }
+
+    for(let i = 0; i < this.listaOngsId.length; i++){
+      
+    }
+
+
+
+    console.log(listaOngsId)
+
+    // this.listaOngs.push
+
+  }
   //=========================== FIM ===========================
 
   // CATEGORIAS
   getAllCategorias() {
     this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
-      console.log(this.listaCategorias)
     })
   }
   //=========================== FIM ===========================
@@ -103,32 +154,41 @@ export class ProdutosComponent implements OnInit {
 
   //Filtrar por intervado de valor
   findProdutosByPreco() {
+
+
     this.produtoService.getProdutosByValor(this.precoInicio, this.precoFinal).subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
-      this.alertsService.showAlertSuccess('OK')
+      this.toastrService.success('', 'Filtro aplicado com sucesso!', {
+        timeOut: 2200,
+        progressBar: true,
+        closeButton: true,
+        positionClass: 'toast-bottom-right'
+      })
+
     }, erro => {
-      if (erro.status == 404) {
-        this.alertsService.showAlertDanger('Lista vazia')
-      }
-      if (erro.status == 400) {
-        this.alertsService.showAlertDanger('Requisição Inválida')
+      if (erro.status == 404 || erro.status == 400) {
+        this.toastrService.error('', 'Produto não encontrado', {
+          timeOut: 2200,
+          progressBar: true,
+          closeButton: true,
+          positionClass: 'toast-bottom-right'
+        })
       }
     })
   }
 
   clearFiltro() {
     let precoFinalx: number
+    let precoIniciox: number
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
       this.precoFinal = precoFinalx
-      this.precoInicio = 0
+      this.precoInicio = precoIniciox
     })
   }
 
 
   //Filtrar por ONGs
-  filtrar() {
-  }
 
   categoria2() {
     this.cat2 = true

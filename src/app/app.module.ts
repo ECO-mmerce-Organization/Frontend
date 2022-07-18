@@ -26,11 +26,11 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
 import { AlertsComponent } from './alerts/alerts.component';
+
+//ALERTS
 import { ModalModule } from 'ngx-bootstrap/modal';
-
-
-
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -62,7 +62,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [{
     provide: LocationStrategy,

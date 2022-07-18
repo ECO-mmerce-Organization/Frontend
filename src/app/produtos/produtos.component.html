@@ -7,11 +7,10 @@
 
 <div class="container my-4">
 
+    <img src="" alt="">
+
     <div class="row d-flex justify-content-end">
         <div class="col-md-12">
-
-
-
 
             <div class="d-flex align-content-end align-items-end justify-content-end">
                 <pagination-controls class="pagination-align" (pageChange)="p = $event" previousLabel="Voltar"
@@ -41,16 +40,16 @@
                     <hr class="linhas-titulo mb-1 mt-0">
 
                     <form>
-                        <div class="input-group align-content-end">
-                            <div class="input-group">
+                        <div class="input-group d-flex">
+                            <div class="input-group mt-2">
                                 <input type="number" aria-label="Preço Inicial" class="form-control"
                                     [(ngModel)]="precoInicio" placeholder="Valor Inicial">
                                 <input type="number" aria-label="Preço Final" class="form-control"
                                     [(ngModel)]="precoFinal" placeholder="Valor Final">
                             </div>
 
-                            <div class="d-flex align-content-end">
-                                <button class="btn-cancel-sm" (click)="clearFiltro()">Limpar</button>
+                            <div>
+                                <button class="btn-cancel-sm mr-2 mt-2" (click)="clearFiltro()">Limpar</button>
                                 <button class="btn-green-sm mr-2 mt-2" (click)="findProdutosByPreco()">Filtrar</button>
                             </div>
                         </div>
@@ -88,20 +87,22 @@
 
                         <!-- CONTENT -->
                         <div class="rolagem">
-                            <div *ngFor="let ong of listaOngs">
+                            <div *ngFor="let ong of listaOngs" id="listOngas">
                                 <label for="ong + {{ong.id}}" class="select_label d-block mb-0">
-                                    <input type="checkbox" value="{{ong.id}}" name="ong1" id="{{ong.id}}" class="m-lg-2"
+                                    <input (click)="addOng(ong)" type="checkbox" value="" name="ong1" id="1" class="m-lg-2"
                                         (change)="ong1 = !ong1" />{{ong.nome}}
                                     <span class="select_label-icon"></span>
                                 </label>
                             </div>
                         </div>
+                        <div>
+                            <button class="btn-cancel-sm mr-2 mt-2" (click)="clearFiltro()">Limpar</button>
+                            <button class="btn-green-sm mr-2 mt-2" (click)="getAllOngs()">Filtrar ONGs</button>
+                            <button class="btn-green-sm mr-2 mt-2" (click)="filtrarOng()">Filtrar ONGs unico</button>
+                        </div>
                         <!-- END -->
                     </div>
-
-                    <button class="btn btn-sm" (click)="filtrar()">Filtrar</button>
                 </div>
-
 
                 <div class="col-md-9 d-flex">
 

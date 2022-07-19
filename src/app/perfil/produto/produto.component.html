@@ -20,15 +20,33 @@
                     <h4 class="mt-4 d-flex justify-content-end titulo-filtro">CADASTRAR</h4>
                     <hr class="linhas-titulo mb-4 mt-0">
 
-                    <div class="input-group d-block">
-                        <button
-                            class="btn-green-sm align-items-center justify-content-center px-3 py-2 mt-2 text-center ponteiro"
-                            [routerLink]="(['/cadastrarProduto'])">CADASTRAR PRODUTOS</button>
-                        <button
-                            class="btn-green-sm align-items-center justify-content-center px-3 py-2 mt-2 text-center ponteiro"
-                            [routerLink]="(['/cadastrarCategoria'])">CADASTRAR CATEGORIAS</button>
-                    </div>
+                    <form>
+                        <div class="input-group d-block">
+                            <div class="input-group mt-2 btn-green-sm ponteiro" [routerLink]="(['/cadastrarProduto'])">
+                                CADASTRAR PRODUTOS
+                            </div>
+
+                            <div class="input-group mt-2 btn-green-sm ponteiro" [routerLink]="(['/cadastrarCategoria'])">
+                                CADASTRAR CATEGORIAS
+                            </div>
+                        </div>
+                    </form>
+
+                    <h4 class="mt-4 d-flex justify-content-end titulo-filtro">VISUALIZAR</h4>
+                    <hr class="linhas-titulo mb-1 mt-0">
+                    <form>
+                        <div class="input-group d-block">
+                            <div class="input-group mt-2 btn-green-sm ponteiro" [routerLink]="(['/deletarCategoria'])">
+                                LISTAR CATEGORIAS
+                            </div>
+
+                            <div [routerLink]="(['/slide'])" class="input-group mt-2 btn-green-sm ponteiro">
+                                SLIDES
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
 
                 <div class="col-md-9 d-flex">
 

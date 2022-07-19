@@ -12,6 +12,8 @@ export class DeletarCategoriaComponent implements OnInit {
 
   categoria = new Categoria
   idCategoria: number
+  listaCategorias: Categoria[]
+
   constructor(
     private categoriaService: CategoriaService,
     private route: ActivatedRoute
@@ -20,8 +22,7 @@ export class DeletarCategoriaComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
-    this.idCategoria = this.route.snapshot.params['id']
-    this.findCategoriaById(this.idCategoria)
+    this.getAllCategorias()
   }
 
   findCategoriaById(id: number) {
@@ -30,9 +31,17 @@ export class DeletarCategoriaComponent implements OnInit {
     })
   }
 
-  deletarCategoria() {
-    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
+  deletarCategoria(id: number) {
+    this.categoriaService.deleteCategoria(id).subscribe(() => {
+      alert('Apagado')
+      this.getAllCategorias()
     })
   }
 
+  getAllCategorias() {
+    this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+      console.log (this.listaCategorias)
+    })
+  }
 }

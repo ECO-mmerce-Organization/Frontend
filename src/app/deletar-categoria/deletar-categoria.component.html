@@ -1,25 +1,33 @@
-<div class="container-fluid cor d-flex justify-content-center mt-5 mb-5 bgtitulo ">
-    <div class="row ">
-        <div class="col-md-12 ">
-            <h2>APAGAR CATEGORIA</h2>
-        </div>
+<div class="row d-flex justify-content-center align-items-center bg-dark titulo-pg m-0">
+    <div class="col-md-12">
+        <h1 class="text-center text-white">CATEGORIAS</h1>
+        <h5 class="text-center text-white mt-0">Todas as Categorias</h5>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center cor">Você tem certeza que deseja apagar essa categoria?</h4>
-        </div>
-    </div>
 
-    <div class="row mt-5 mb-5">
-        <div class="col-md-12 d-flex justify-content-center">
-            <button type="submit" class="btn bgcor1 mr-4 " >Não</button>
-            <button (click)="deletarCategoria()"  type="submit" class="btn bgcor" >Sim</button>
-        </div>
-    </div>
+    <table class="table my-3">
+        <thead>
+            <tr class="bg-green text-white">
+                <th scope="col">#</th>
+                <th scope="col">NOME</th>
+                <th scope="col">DESCRIÇÃO</th>
+                <th scope="col">OPÇÕES</th>
+            </tr>
+        </thead>
 
+        <tbody>
+            <tr *ngFor="let categoria of listaCategorias">
+                <th class="d-flex align-items-center" scope="row">{{categoria.id}}</th>
+                <td>{{categoria.nomeCat}}</td>
+                <td>{{categoria.tipo}}</td>
+                <div>
+                    <button class="btn-green-md mr-2">Editar</button>
+                    <button class="btn-cancel-md" (click)="deletarCategoria(categoria.id)">Apagar</button>
+                </div>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
-

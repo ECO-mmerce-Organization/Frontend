@@ -10,6 +10,7 @@ import { Categoria } from '../model/Categoria';
 export class CategoriaService {
 
   linkCategoria = 'https://ecommercegrupo6.herokuapp.com/categorias'
+  //linkCategoria = 'http://localhost:8080/categorias'
 
   constructor(
     private http: HttpClient
@@ -30,4 +31,8 @@ export class CategoriaService {
   postCategoria (categoria: Categoria): Observable<Categoria>{
     return this.http.post<Categoria>(this.linkCategoria, categoria, this.token)
   } 
+
+  deleteCategoria(id: number) {
+    return this.http.delete(this.linkCategoria + `/${id}`, this.token)
+  }
 }

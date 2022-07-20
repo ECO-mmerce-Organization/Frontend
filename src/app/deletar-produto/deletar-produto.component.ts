@@ -25,17 +25,18 @@ export class DeletarProdutoComponent implements OnInit {
     this.findProdutoById(this.idProduto)
   }
 
-  apagar(){
-    this.produtoService.deleteProdutos(this.idProduto).subscribe(()=>{
+  apagar() {
+    this.produtoService.deleteProdutos(this.idProduto).subscribe(() => {
       alert('Produto apagado com sucesso!')
       this.router.navigate(['/produto'])
-
     })
 
   }
+
   findProdutoById(id: number) {
     this.produtoService.getProdutosById(id).subscribe((resp: Produto) => {
       this.produto = resp
     })
-}
+  }
+
 }

@@ -23,9 +23,15 @@ import { DeletarProdutoComponent } from './deletar-produto/deletar-produto.compo
 import { DeletarCategoriaComponent } from './deletar-categoria/deletar-categoria.component';
 import { ProdutoComponent } from './perfil/produto/produto.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginaProdutoComponent } from './produtos/pagina-produto/pagina-produto.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
-
-
+//ALERTS
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlidesComponent } from './perfil/slides/slides.component';
 
 
 @NgModule({
@@ -47,14 +53,20 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
     DeletarProdutoComponent,
     DeletarCategoriaComponent,
     ProdutoComponent,
+    PaginaProdutoComponent,
+    AlertsComponent,
+    SlidesComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    NgxPaginationModule,
+    ModalModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [{
     provide: LocationStrategy,

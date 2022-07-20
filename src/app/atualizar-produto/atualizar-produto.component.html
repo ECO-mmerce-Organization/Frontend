@@ -13,31 +13,27 @@
             <form>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Nome do Produto*</label>
-                    <input [(ngModel)]='produto.nomeProd' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Seu produto">
+                    <label for="NomeProduto">Nome do Produto*</label>
+                    <input [(ngModel)]='produto.nomeProd' type="text" class="form-control" placeholder="Seu produto">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Preço*</label>
-                    <input [(ngModel)]='produto.preco' type="number" class="form-control" id="exampleFormControlInput1" placeholder="Preço">
+                    <label for="PrecoProduto">Preço*</label>
+                    <input [(ngModel)]='produto.preco' type="number" class="form-control" id="precoProd" placeholder="Preço">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Escolha uma Categoria:</label>
-                    <select [(ngModel)]="idCategoria" (change)="findByIdCategoria()" class="form-control" id="exampleFormControlSelect1">
+                    <label for="CategoriaProduto">Escolha uma Categoria:</label>
+                    <select [(ngModel)]='idCategoria' (change)="findByIdCategoria()" class="form-control" id="Categorias">
                         <option *ngFor="let categoria of listaCategorias" value="{{categoria.id}}">{{categoria.nomeCat}}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Link da Foto*</label>
-                    <input [(ngModel)]= 'produto.foto' type="text" class="form-control" id="exampleFormControlInput1" placeholder="Foto">
+                    <label for="LinkProduto">Link da Foto*</label>
+                    <input [(ngModel)]='produto.foto' type="text" class="form-control" placeholder="Foto">
                 </div>
 
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Link da Foto 2</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Segunda foto opcional">
-                </div>
             </form>
         </div>
 
@@ -45,7 +41,7 @@
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Escreva uma descrição bem legal do seu produto:</label>
-                <textarea [(ngModel)]= 'produto.descricao'  class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
+                <textarea [(ngModel)]= 'produto.descricao'  class="form-control" id="descProd" rows="9"></textarea>
             </div>
 
             <div class="d-flex justify-content-center">

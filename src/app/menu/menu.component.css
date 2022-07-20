@@ -1,3 +1,17 @@
 .colormenu{
     background-color: #366A55;
 }
+
+.fs-16{
+    font-size: 19px;
+}
+
+.bgcor{
+    background-color: #DCB14E;
+    color: #ffffff;
+}
+
+.bgcor:hover{
+    background-color: #98BEA3;
+    color: #ffffff;
+}

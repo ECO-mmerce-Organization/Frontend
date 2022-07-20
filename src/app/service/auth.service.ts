@@ -12,6 +12,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class AuthService {
 
   linkAuth = 'https://ecommercegrupo6.herokuapp.com/usuarios'
+  //linkAuth = 'http://localhost:8080/usuarios'
 
   constructor(
     private http: HttpClient
@@ -37,9 +38,12 @@ export class AuthService {
       console.log("Não é uma ong")
     }
   }
+
   getUserById (id :number): Observable<Usuario>{
     return this.http.get<Usuario>(this.linkAuth+ `/${id}`, this.token)
   }
 
-
+  getOngs():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.linkAuth + "/ong")
+  }
 }
